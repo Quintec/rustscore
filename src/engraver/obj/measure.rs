@@ -1,4 +1,4 @@
 use super::note::NoteEvent;
-pub struct Measure {
-    notes: Vec<NoteEvent>,
+pub struct Measure<'a> {
+    notes: Vec<NoteEvent<'a>>,
 }

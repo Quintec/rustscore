@@ -1,4 +1,4 @@
-use crate::engraver::obj::part::Part;
+use super::part::Part;
 use crate::engraver::types::key::Key;
 use crate::engraver::types::time_signature::TimeSignature;
 struct ScoreMeta {
@@ -8,8 +8,8 @@ struct ScoreMeta {
     key: Key,
     time: TimeSignature,
 }
-struct Score {
-    parts: Vec<Part>,
+struct Score<'a> {
+    parts: Vec<Part<'a>>,
     meta: ScoreMeta,
    // scoreEvents: Vec<ScoreEvent>, later, for playback, somewhere else
    // ex.

@@ -5,3 +5,4 @@ pub mod clef;
 pub mod notehead;
 pub mod stem_direction;
 pub mod articulation;
+pub mod duration;
