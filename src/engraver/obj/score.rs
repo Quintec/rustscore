@@ -1,6 +1,7 @@
 use super::part::Part;
 use crate::engraver::types::key::Key;
 use crate::engraver::types::time_signature::TimeSignature;
+use crate::engraver::types::time_signature::BeatDivision;
 struct ScoreMeta {
     title: String,
     composer: String,
@@ -18,4 +19,37 @@ struct Score<'a> {
    //   Accelerando { duration: u32, easing: Easing},
    //   TempoChange {tempo: u32},
    // } etc.
+}
+
+impl<'a> Default for Score<'a> {
+    fn default() -> Score<'a> {
+        Score::new(
+            String::from("Untitled"),
+            String::from("Unnamed"),
+            120,
+            Key::C { major: true },
+            TimeSignature::new(4, BeatDivision::Four),
+        )
+    }
+}
+
+impl<'a> Score<'a> {
+    pub fn new(
+        title: String,
+        composer: String,
+        tempo: u32,
+        key: Key,
+        time: TimeSignature,
+    ) -> Score<'a> {
+        Score {
+            parts: Vec::new(),
+            meta: ScoreMeta {
+                title,
+                composer,
+                tempo,
+                key,
+                time,
+            },
+        }
+    }
 }
