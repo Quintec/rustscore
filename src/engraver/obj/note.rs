@@ -12,13 +12,13 @@ struct NoteMeta<'a> {
 }
 
 pub struct Note<'a> {
-    pitch: u8,
-    duration: Duration,
+    pub pitch: u8,
+    pub duration: Duration,
     meta: NoteMeta<'a>,
 }
 
 pub struct NoteEvent<'a> {
-    note: Note<'a>,
+    pub note: Note<'a>,
     time: u32,
 }
 

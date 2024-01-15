@@ -3,15 +3,15 @@ use crate::engraver::types::key::Key;
 use crate::engraver::types::time_signature::TimeSignature;
 use crate::engraver::types::time_signature::BeatDivision;
 struct ScoreMeta {
-    title: String,
-    composer: String,
-    tempo: u32, //bpm
-    key: Key,
-    time: TimeSignature,
+    pub title: String,
+    pub composer: String,
+    pub tempo: u32, //bpm
+    pub key: Key,
+    pub time: TimeSignature,
 }
 struct Score<'a> {
-    parts: Vec<Part<'a>>,
-    meta: ScoreMeta,
+    pub parts: Vec<Part<'a>>,
+    pub meta: ScoreMeta,
    // scoreEvents: Vec<ScoreEvent>, later, for playback, somewhere else
    // ex.
    // pub enum ScoreEvent {
